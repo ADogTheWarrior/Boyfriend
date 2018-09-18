@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 4) do
     t.string "title"
     t.string "genre"
     t.integer "pages"
+    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
