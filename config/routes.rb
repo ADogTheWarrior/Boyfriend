@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :books
   resources :authors
   resources :sessions
-  match '/auth/:provider/callback' => 'sessions#create'
-  match '/signout' => 'sessions#destroy', :as => :signout
-  match '/signin' => 'sessions#new', :as => :signin
+  get '/auth/facebook/callback' => 'sessions#create'
+  get '/signout' => 'sessions#destroy', :as => :signout
+  get '/signin' => 'sessions#new', :as => :signin
 end

@@ -20,4 +20,11 @@ class SessionsController < ApplicationController
 
   def destroy
   end
+
+private
+
+  def auth
+    #request enb moniauth
+    #private method
+  end
 end
