@@ -29,5 +29,5 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# Ignore the omniauth that has sensitive keys in it.
-/config/initializers/omniauth.rb
+# Ignore application configuration
+/config/application.yml
