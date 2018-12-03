@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-   raise request.env["omniauth.auth"].to_yaml
- end
+    raise request.env["omniauth.auth"].to_yaml
+  end
 
   def edit
   end
@@ -24,7 +24,8 @@ class SessionsController < ApplicationController
 private
 
   def auth
-    #request enb moniauth
+    #request env omniauth
+    #  raise request.env["omniauth.auth"].to_yaml
     #private method
   end
 end
