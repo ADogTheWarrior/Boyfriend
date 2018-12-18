@@ -1,1 +1,8 @@
-Book New View
+Book New View<br>
+
+<%= form_for @book do |f| %>
+  Title: <%= f.text_field :title %><br>
+  Genre: <%= f.text_field :genre %><br>
+  Pages: <%= f.text_field :pages %><br>
+  <%= f.submit %>
+<% end %>

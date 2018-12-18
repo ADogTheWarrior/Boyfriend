@@ -1,1 +1,8 @@
-Book Edit View
+<h2>Editing "<%= @book.name %>"</h2>
+
+<%= form_for @author do |f| %>
+  Name: <%= f.text_field :title %><br>
+  Genre: <%= f.text_field :genre %><br>
+  Pages: <%= f.text_field :pages %><br>
+  <%= f.submit %>
+<% end %>
