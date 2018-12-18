@@ -1,8 +1,6 @@
-Author Edit View
+<h2>Editing "<%= @author.name %>"</h2>
 
-<!-- facebook snipit that checks log in status, dunno if it needs to be in script tags -->
-<!-- <script>
-  FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-  });
-</script> -->
+<%= form_for @author do |f| %>
+  Name: <%= f.text_field :name %><br>
+  <%= f.submit %>
+<% end %>
