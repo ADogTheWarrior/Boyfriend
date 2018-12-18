@@ -2,6 +2,10 @@ class Author < ActiveRecord::Base
   has_many :books
   has_many :users, through: :books
 
+  validates :name, presence: true, uniqueness: true
+  # And maybe validate there's at least 1 book the author wrote.
+      # would be bugged if I create the author before the book
+
   #find the most common genre from the author's books and return it
   #ties decided by newest? or oldest?
   def most_popular_genre
