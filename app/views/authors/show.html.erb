@@ -4,3 +4,12 @@
      <td>Name: <%= @author.name %></td>
   </tr>
 </tbody>
+
+<h3>Add a new book to <%= @author.name%>'s collection</h3>
+
+<h3><%= pluralize(@author.books.count, 'Book') %></h3>
+<ul>
+  <% @author.books.each do |b| %>
+    <li><%= link_to b.title, p_path(b) %></li>
+  <% end %>
+</ul>

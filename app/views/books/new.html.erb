@@ -4,5 +4,11 @@ Book New View<br>
   Title: <%= f.text_field :title %><br>
   Genre: <%= f.text_field :genre %><br>
   Pages: <%= f.text_field :pages %><br>
+  Author: <%= f.text_field :author_name, list: "authors_autocomplete" %><br>
+  <datalist id="authors_autocomplete">
+    <% Author.all.each do |author| %>
+      <option value="<%= author.name %>">
+    <% end %>
+  </datalist>
   <%= f.submit %>
 <% end %>

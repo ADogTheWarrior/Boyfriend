@@ -8,4 +8,12 @@ class Book < ActiveRecord::Base
   validates :pages, presence: true
   # validates :author_id, presence: true
     # Feel like having an author_id validation could conflict later depending on whether the author or the book is created first
+
+  def author_name=(name)
+    self.author = Author.find_or_create_by(name: name)
+  end
+
+  def author_name
+    self.author ? self.author.name : nil
+  end
 end
