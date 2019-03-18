@@ -1,15 +1,17 @@
 <h2><%= @author.name %></h2>
 <tbody>
   <tr>
-     <td>Name: <%= @author.name %></td>
+    <td>Name: <%= @author.name %></td>
   </tr>
 </tbody>
 
+<!-- https://learn.co/tracks/full-stack-web-development-v6/rails/associations-and-rails/basic-nested-forms
+may need this page for making a new book in this author show page -->
 <h3>Add a new book to <%= @author.name%>'s collection</h3>
 
 <h3><%= pluralize(@author.books.count, 'Book') %></h3>
 <ul>
   <% @author.books.each do |b| %>
-    <li><%= link_to b.title, p_path(b) %></li>
+    <li><%= link_to b.title, book_path(b) %></li>
   <% end %>
 </ul>

@@ -1,9 +1,9 @@
 Book Show View
 
-<h2><%= @book.name %></h2>
+<h2><%= @book.title %></h2>
 <tbody>
   <tr>
-    <td>Name: <%= @book.name %></td>
+    <td>Title: <%= @book.title %></td>
     <td>Genre: <%= @book.genre %></td>
     <td>Pages: <%= @book.pages %></td>
     <td>Author: <%= link_to @book.author.name, author_path(@book.author) if @book.author%></td>

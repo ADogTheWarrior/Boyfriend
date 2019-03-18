@@ -16,4 +16,9 @@ class Book < ActiveRecord::Base
   def author_name
     self.author ? self.author.name : nil
   end
+
+  def author_attributes=(author)
+    self.author = Artist.find_or_create_by(name: author.name)
+    self.author.update(author)
+  end
 end

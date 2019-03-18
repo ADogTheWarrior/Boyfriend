@@ -2,5 +2,13 @@ Author New View<br>
 
 <%= form_for @author do |f| %>
   Name: <%= f.text_field :name %><br>
+
+  New Book<br>
+  <%= f.fields_for :books do |book| %>
+    Title: <%= book.text_field :title %><br>
+    Genre: <%= book.text_field :genre %><br>
+    Pages: <%= book.text_field :pages %><br>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
