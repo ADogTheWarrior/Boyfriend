@@ -2,9 +2,9 @@ Book Index View<br>
 <tbody>
   <% @books.all.each do |book| %>
     <tr>
+    <td>Title: <%= book.title %></td><br>
       <td>Genre: <%= book.genre %></td><br>
-      <td>Title: <%= book.title %></td><br>
-      <td>Pages: <%= book.pages %></td><br>
+      <td>Pages: <%= book.pages %></td><br><br>
     </tr>
   <% end %>
 
