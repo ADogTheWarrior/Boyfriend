@@ -2,7 +2,8 @@ Author Index View<br>
 <tbody>
   <% @authors.all.each do |author| %>
     <tr>
-       <td>Name: <%= author.name %></td><br>
+       <td>Name: <%= link_to author.name, author_path(author) %></td><br>
+       <td>Book Total: <%= author.books.count %></td><br><br>
     </tr>
   <% end %>
 </tbody>

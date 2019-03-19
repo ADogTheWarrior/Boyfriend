@@ -2,7 +2,7 @@ Book Index View<br>
 <tbody>
   <% @books.all.each do |book| %>
     <tr>
-    <td>Title: <%= book.title %></td><br>
+      <td>Title: <%= link_to book.title, book_path(book) %></td><br>
       <td>Genre: <%= book.genre %></td><br>
       <td>Pages: <%= book.pages %></td><br><br>
     </tr>
