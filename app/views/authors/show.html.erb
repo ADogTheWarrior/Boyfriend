@@ -5,9 +5,7 @@
   </tr>
 </tbody>
 
-<!-- https://learn.co/tracks/full-stack-web-development-v6/rails/associations-and-rails/basic-nested-forms
-may need this page for making a new book in this author show page -->
-<h3>Add a new book to <%= @author.name%>'s collection</h3>
+<%= link_to "New Book", new_author_book_path(@author) %>
 
 <h3><%= pluralize(@author.books.count, 'Book') %></h3>
 <ul>

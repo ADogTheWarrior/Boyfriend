@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :books
   resources :authors do
-    resources :books, only: [:show, :index]
+    resources :books, only: [:show, :index, :new, :edit]
   end
   resources :sessions
   get '/auth/facebook/callback' => 'sessions#create'

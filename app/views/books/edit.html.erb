@@ -1,4 +1,4 @@
-<h2>Editing "<%= @book.name %>"</h2>
+<h2>Editing "<%= @book.title %>"</h2>
 
 <% if @book.errors.any? %>
   <div id="error_explanation">
@@ -15,7 +15,7 @@
   </div>
 <% end %>
 
-<%= form_for @author do |f| %>
+<%= form_for @book do |f| %>
   Title: <%= f.text_field :title %><br>
   Genre: <%= f.text_field :genre %><br>
   Pages: <%= f.text_field :pages %><br>
