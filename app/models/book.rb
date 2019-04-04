@@ -6,6 +6,10 @@ class Book < ActiveRecord::Base
   validates :title, presence: true, uniqueness: true
   validates :genre, presence: true
   validates :pages, presence: true
+
+  enum genre: [ :Action, :Adventure, :Art, :Autobiography, :Anthology, :Biography, :Book_Review, :Chick_Lit, :Children, :Cookbook, :Comic_Book, :Coming_of_age, :Crime, :Diary, :Dictionary, :Drama, :Encyclopedia, :Fairytale, :Fantasy, :Fiction, :Guide, :Graphic_Novel, :Health, :History,
+    :Horror, :Journal, :Math, :Memoir, :Mystery, :New_Age, :Non_Fiction, :Prayer, :Paranormal, :Religious, :Picture_Book, :Poetry, :Political, :Review, :Romance, :Satire, :Science, :Self_Help, :Short_Story, :Suspense, :Textbook, :Thriller, :Travel, :Young_Adult ]
+
   # validates :author_id, presence: true
     # Feel like having an author_id validation could conflict later depending on whether the author or the book is created first
 
