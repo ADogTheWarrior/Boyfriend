@@ -17,7 +17,7 @@
 
 <%= form_for @book do |f| %>
   Title: <%= f.text_field :title %><br>
-  Genre: <%= f.input :genre, :as => :select, :collection => Book.genres.keys.to_a %><br>
+  Genre: <%= f.select :genre, Book.genres.keys.to_a %><br>
   Pages: <%= f.text_field :pages %><br>
   Author: <%= f.text_field :author_name, list: "authors_autocomplete" %><br>
   <datalist id="authors_autocomplete">

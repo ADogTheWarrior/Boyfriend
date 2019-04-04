@@ -5,7 +5,7 @@ Book New View<br>
 
   <!-- Genre: <%= f.text_field :genre %><br> -->
 
-  Genre: <%= f.input :genre, :as => :select, :collection => Book.genres.keys.to_a %><br>
+  Genre: <%= f.select :genre, Book.genres.keys.to_a %><br>
 
   Pages: <%= f.text_field :pages %><br>
   Author: <%= f.text_field :author_name, list: "authors_autocomplete" %><br>

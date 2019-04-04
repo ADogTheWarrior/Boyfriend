@@ -6,7 +6,7 @@ Author New View<br>
   New Book<br>
   <%= f.fields_for :books do |book| %>
     Title: <%= book.text_field :title %><br>
-    Genre: <%= book.text_field :genre %><br>
+    Genre: <%= book.select :genre, Book.genres.keys.to_a %><br>
     Pages: <%= book.text_field :pages %><br>
   <% end %>
 
