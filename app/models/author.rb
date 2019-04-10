@@ -15,6 +15,7 @@ class Author < ActiveRecord::Base
     #find the most common genre from the author's books and return it
     #ties decided by newest? or oldest?
   def most_popular_genre
+    # account for case where an author is made with no books associated
     return "genre"
   end
 end
