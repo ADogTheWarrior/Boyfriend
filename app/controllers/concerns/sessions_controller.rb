@@ -1,11 +1,6 @@
 class SessionsController < ApplicationController
-  def index
-  end
-
-  def show
-  end
-
   def new
+    @user = User.new
   end
 
   def create
@@ -22,15 +17,9 @@ class SessionsController < ApplicationController
     render 'users/index'
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
-    # Log out method here.
     session.delete :user_id
+    redirect_to '/'
   end
 
 private
@@ -42,24 +31,3 @@ private
     #private method
   end
 end
-
-
-# class SessionsController < ApplicationController
-#   def create
-#     @user = User.find_or_create_by(uid: auth['uid']) do |u|
-#       u.name = auth['info']['name']
-#       u.email = auth['info']['email']
-#       u.image = auth['info']['image']
-#     end
-#
-#     session[:user_id] = @user.id
-#
-#     render 'welcome/home'
-#   end
-#
-#   private
-#
-#   def auth
-#     request.env['omniauth.auth']
-#   end
-# end

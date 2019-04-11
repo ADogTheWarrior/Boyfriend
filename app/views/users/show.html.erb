@@ -1,1 +1,9 @@
-User Show View
+User Show
+
+<% if params.has_key?(:message) %>
+  <p><%= params[:message] %></p>
+<% end %>
+
+<%= "User Name: #{@user.name}" %><br>
+<%= "User Books: (stub)" %><br>
+<%= "User Authors: (stub)" %>
