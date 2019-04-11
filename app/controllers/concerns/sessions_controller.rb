@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       u.name = auth['info']['name']
       u.email = auth['info']['email']
     end
-    return head(:forbidden) unless @user.authenticate(params[:password])
+    # return head(:forbidden) unless @user.authenticate(params[:password])
 
     session[:user_id] = @user.id
 
