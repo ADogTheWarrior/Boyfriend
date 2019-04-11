@@ -1,9 +1,13 @@
 <h1>Create a User</h1>
 
-<%= form_for :user, url: '/users' do |f| %>
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
-<% end %>
+<%= form_for @user  do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br />
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <br />
+  
+<%= f.submit %>
