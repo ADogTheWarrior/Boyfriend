@@ -9,7 +9,6 @@ class AuthorsController < ApplicationController
 
   def new
     @author = Author.new
-    @author.books.build
   end
 
   def create
@@ -44,14 +43,6 @@ class AuthorsController < ApplicationController
   private
 
   def author_params
-    params.require(:author).permit(
-      :name,
-      book_ids: [],
-      books_attributes: [
-        :title,
-        :genre,
-        :pages
-      ]
-    )
+    params.require(:author).permit(:name)
   end
 end
