@@ -10,6 +10,6 @@
 <h3><%= pluralize(@author.books.count, 'Book') %></h3>
 <ul>
   <% @author.books.each do |b| %>
-    <li><%= link_to b.title, book_path(b) %></li>
+    <li><%= link_to b.title, author_book_path(b) %></li>
   <% end %>
 </ul>
