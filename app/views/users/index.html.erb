@@ -1,1 +1,13 @@
 User Index View
+<% if @users.present? %>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>Name: <%= link_to user.name, user_path(user) %></td><br>
+        <td>Email: <%= user.email %></td><br><br>
+      </tr>
+    <% end %>
+
+    users.count=<%= @users.count %>
+  </tbody>
+<%end%>

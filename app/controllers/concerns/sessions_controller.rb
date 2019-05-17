@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
 # binding.pry
       u.name = auth['info']['name']
       u.email = auth['info']['email']
+      # password, need to auto generate a secure password
     end
     # return head(:forbidden) unless @user.authenticate(params[:password])
 
