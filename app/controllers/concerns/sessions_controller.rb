@@ -4,21 +4,19 @@ class SessionsController < ApplicationController
   end
 
   def create
-    binding.pry
     # request is an object i can look at in pry
     # raise request.env["omniauth.auth"].to_yaml
     @user = User.find_or_create_by(uid: auth['uid']) do |u|
-# binding.pry
       u.name = auth['info']['name']
       u.email = auth['info']['email']
-      # password, need to auto generate a secure password
+      # u.provider = auth['provider'] This line of code doesnt work as is
+      # password, need to auto generate a secure
     end
     # return head(:forbidden) unless @user.authenticate(params[:password])
 
     session[:user_id] = @user.id
 
-    redirect_to '/users/index'
-    # should be redirect
+    redirect_to @user
   end
 
   def destroy
