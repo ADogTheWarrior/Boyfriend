@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    binding.pry
     # request is an object i can look at in pry
     # raise request.env["omniauth.auth"].to_yaml
     @user = User.find_or_create_by(uid: auth['uid']) do |u|
@@ -16,7 +17,8 @@ class SessionsController < ApplicationController
 
     session[:user_id] = @user.id
 
-    render 'users/index'
+    redirect_to '/users/index'
+    # should be redirect
   end
 
   def destroy
