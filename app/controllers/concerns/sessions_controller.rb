@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_by(uid: auth['uid']) do |u|
       u.name = auth['info']['name']
       u.email = auth['info']['email']
+      u.password = "fixthis"
       # u.provider = auth['provider'] This line of code doesnt work as is
       # password, need to auto generate a secure
     end

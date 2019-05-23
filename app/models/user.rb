@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :user_books
   has_many :books, :through => :user_books
   has_many :authors, through: :books
+  has_secure_password
 
   # validates :provider Just not sure how best to validate right now
   # validates :uid      Just not sure how best to validate right now
