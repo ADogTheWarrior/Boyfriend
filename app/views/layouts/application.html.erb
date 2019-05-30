@@ -37,6 +37,13 @@
 <h1>Navbar</h1>
 <p>links to User, Author, Book index pages.<br>
 says whether logged in or not.</p>
+
+    <% if session.include? :user_id %>
+      Welcome <%= User.find(session[:user_id]).name %> <%= link_to "log out", logout_path %>
+    <% else %>
+      <%= link_to "log in", login_path %> Are you new? <%= link_to "sign up", signin_path %>
+    <% end %>
+    <br>
     <%= yield %>
   </body>
 </html>

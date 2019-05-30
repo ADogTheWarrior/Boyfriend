@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   end
   resources :sessions
   get '/auth/facebook/callback' => 'sessions#create'
-  get '/signin' => 'sessions#new', :as => :signin
-  # get '/signin' => 'users#new'
-  get '/signout' => 'sessions#destroy', :as => :signout
-  # get '/signout' => 'users#destroy'
-  # get '/login' => 'sessions#new'
-  # post '/login' => 'sessions#create'
+  
+  get '/signin' => 'users#new', :as => :signin
+  post '/signin' => 'users#create'
+  delete '/signout' => 'users#destroy', :as => :signout
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 end
