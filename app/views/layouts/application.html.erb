@@ -34,16 +34,19 @@
        }(document, 'script', 'facebook-jssdk'));
     </script>
 
-<h1>Navbar</h1>
-<p>links to User, Author, Book index pages.<br>
-says whether logged in or not.</p>
+    <h2>Navbar</h2>
+    <p>
+      <%= link_to "Users", users_path %>
+      <%= link_to "Authors", authors_path %>
+      <%= link_to "Books", books_path %>
+    </p>
 
     <% if session.include? :user_id %>
-      Welcome <%= User.find(session[:user_id]).name %> <%= link_to "log out", logout_path, method: :delete %>
+      <p> Welcome <%= User.find(session[:user_id]).name %> <%= link_to "log out", logout_path, method: :delete %> </p>
     <% else %>
-      <%= link_to "log in", login_path %> Are you new? <%= link_to "sign up", signin_path %>
+      <p> <%= link_to "log in", login_path %> Are you new? <%= link_to "sign up", signin_path %> </p>
     <% end %>
-    <br>
+    
     <%= yield %>
   </body>
 </html>
