@@ -1,4 +1,24 @@
 Login
 
-<%= link_to 'facebook', '/auth/facebook'%>
+<%= link_to 'log in with facebook', '/auth/facebook'%>
 <!-- have this code on the new user view as well -->
+
+<p>Stub</p>
+
+<p>form below needs to simply log the individual in, it assumes they made an account previously. currently incomplete</p>
+<%= form_for @user do |f| %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br />
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br />
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+  <br />
+
+  <%= f.submit %>
+<% end %>
