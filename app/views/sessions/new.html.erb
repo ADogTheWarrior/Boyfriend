@@ -3,22 +3,10 @@ Login
 <%= link_to 'log in with facebook', '/auth/facebook'%>
 <!-- have this code on the new user view as well -->
 
-<p>Stub</p>
+<p>form below needs to simply log the individual in, it assumes they made an account previously. currently incomplete, possibly make the email a dropdown.</p>
 
-<p>form below needs to simply log the individual in, it assumes they made an account previously. currently incomplete</p>
-<%= form_for @user do |f| %>
-
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <br />
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br />
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <br />
-
-  <%= f.submit %>
+<%= form_tag sessions_path do %>
+  Email: <%= select_tag "email", options_from_collection_for_select(User.order(:email), 'email', 'email')%><br>
+  Password: <%= text_field_tag "password" %>
+  <%= submit_tag "Sign In" %>
 <% end %>
