@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 4) do
 
   create_table "users", force: :cascade do |t|
     t.string "provider"
-    t.string "uid"
+    t.string "uid", default: "0"
     t.string "name"
     t.string "email"
     t.string "password_digest"
