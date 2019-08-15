@@ -1,10 +1,11 @@
-Book Index View<br>
+<h3>Book Index View</h3>
 <tbody>
   <% @books.all.each do |book| %>
     <tr>
       <td>Title: <%= link_to book.title, book_path(book) %></td><br>
       <td>Genre: <%= book.genre %></td><br>
-      <td>Pages: <%= book.pages %></td><br><br>
+      <td>Pages: <%= book.pages %></td><br>
+      <td>Author: <%= link_to book.author.name, author_path(book.author) if book.author%></td><br><br>
     </tr>
   <% end %>
 
