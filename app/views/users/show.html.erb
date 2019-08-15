@@ -1,9 +1,8 @@
-<h1>User Show</h1>
+<h1><%=@user.name%>'s Bookshelf</h1>
 
 <% if params.has_key?(:message) %>
   <p><%= params[:message] %></p>
 <% end %>
 
-<%= "User Name: #{@user.name}" %><br>
 <%= "User Books: (stub)" %><br>
 <%= "User Authors: (stub)" %>
