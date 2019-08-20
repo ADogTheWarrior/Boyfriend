@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   resources :authors do
     resources :books, only: [:show, :index, :new, :edit]
   end
+
+  root 'sessions#new'
+
   resources :sessions
   get '/auth/facebook/callback' => 'sessions#create'
-  
+
   get '/signin' => 'users#new', :as => :signin
   post '/signin' => 'users#create'
   delete '/signout' => 'users#destroy', :as => :signout
