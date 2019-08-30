@@ -23,6 +23,9 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     if @book.valid?
       @book.save
+      if !session[:user_id].nil?
+        User.find(session[:user_id]).books << @book
+      end
       redirect_to book_path(@book)
     else
       render :new
