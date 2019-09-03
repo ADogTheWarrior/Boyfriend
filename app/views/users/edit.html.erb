@@ -2,10 +2,9 @@
 
 <%= form_for @user do |f| %>
   Name: <%= f.text_field :name %><br>
-  <%= f.submit %>  
 
   <div class="field">
-    <%= f.label "Area of Expertise" %><br />
+    <%= f.label "Add/Remove Books from Shelf" %><br />
     <%= f.collection_check_boxes :book_ids, Book.all, :id, :title do |b| %>
       <div class="collection-check-box">
         <%= b.check_box %>
@@ -14,7 +13,7 @@
     <% end %>
   </div>
 
-
+  <%= f.submit %>  
 <% end %>
 
 <!-- need to add a way to add/remove the book to/from current user -->
