@@ -4,17 +4,11 @@
   <p><%= params[:message] %></p>
 <% end %>
 
-<%= "User Book(Bookshelf): (stub)" %><br>
-<%= "Add New Book to Bookshelf" %>
-
-<!-- ====== -->
-<!-- It seems this section doens't show because the User object never had books saved to it, same thing for authors. -->
 <% @user.books.each do |book| %>
   <tr>
-    <td>Title: <%= link_to book.title, book_path(book) %></td><br>
-    <td>Genre: <%= book.genre %></td><br><br>
+    <td><%= link_to book.title, book_path(book) %></td>
+    <td>, <%= book.genre %></td><br><br>
   </tr>
 <% end %><br>
-<!-- ===== -->
 
 <%= "User Authors: (stub)" %>
