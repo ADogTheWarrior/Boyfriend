@@ -1,3 +1,4 @@
+]
 class UsersController < ApplicationController
   def index
     @users = User.all
@@ -32,8 +33,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
+# binding.pry
     @user.update(user_params)
+# binding.pry
+
+# the array's first item is an empty string, this just gives the array of book ids
+# params[:user][:book_ids]
+
+# deletes all books with this user
+# @user.books.clear
 
     if @user.save
       redirect_to @user
@@ -52,6 +60,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :book_ids)
   end
 end
