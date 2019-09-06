@@ -11,4 +11,8 @@
   </tr>
 <% end %><br>
 
-<%= "User Authors: (stub)" %>
+<%= link_to "Edit User", edit_user_path(@user) %><br>
+
+<%= "User Authors: (stub)" %><br>
+
+@user.favorite_author= <%= @user.favorite_author %>
