@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   #return the most common author
   #ties return the newest? or oldest?
-  def favorite_author
-    return "activerecord of favorite author"
+  def largest_bookshelf
+    return "activerecord of user with the largest bookshelf"
   end
 end
