@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
 
   #return the most common author
   #ties return the newest? or oldest?
-  def largest_bookshelf
-    return "activerecord of user with the largest bookshelf"
+  def self.largest_bookshelf
+    # binding.pry
+    User.left_joins(:books).group('books.id').order('count(books.id) desc').limit(1).first
   end
 end

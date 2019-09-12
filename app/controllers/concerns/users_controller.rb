@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   end
 
   def largest_bookshelf
-    @user = User.find(params[:id])
+    @user = User.largest_bookshelf
   end
 
   def destroy

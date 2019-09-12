@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/largest_bookshelf' => 'users#largest_bookshelf'
+
   resources :users
   resources :books
   resources :authors do
