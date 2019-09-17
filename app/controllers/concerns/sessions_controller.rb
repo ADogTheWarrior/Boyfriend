@@ -6,10 +6,11 @@ class SessionsController < ApplicationController
   def create
     # request is an object i can look at in pry
     # raise request.env["omniauth.auth"].to_yaml
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
+    binding.pry
+    @user = User.find_by(uid: auth['uid']) do |u|
       u.name = auth['info']['name']
       u.email = auth['info']['email']
-      u.password = "fixthis"
+      u.password = SecureRandom.hex
       # u.provider = auth['provider'] This line of code doesnt work as is
       # password, need to auto generate a secure
     end
