@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resources :sessions
-  get '/auth/facebook/callback' => 'sessions#create'
+  # get '/auth/facebook/callback' => 'sessions#create'
 
   get '/signin' => 'users#new', :as => :signin
   post '/signin' => 'users#create'
