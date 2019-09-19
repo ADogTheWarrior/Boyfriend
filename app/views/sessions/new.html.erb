@@ -1,9 +1,7 @@
 Login
 
-<%= link_to 'log in with facebook', '/auth/facebook'%>
+<%= link_to "Log In with Google", '/auth/google_oauth2' %>
 <!-- have this code on the new user view as well -->
-
-<p>form below needs to simply log the individual in, it assumes they made an account previously. currently incomplete</p>
 
 <%= form_tag sessions_path do %>
   Email: <%= select_tag "email", options_from_collection_for_select(User.order(:email), 'email', 'email')%><br>
