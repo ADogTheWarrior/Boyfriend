@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   resources :sessions
-  # get '/auth/google_oauth2/callback' => 'sessions#create'
+  get '/auth/google_oauth2/callback' => 'sessions#create'
 
   get '/signin' => 'users#new', :as => :signin
   post '/signin' => 'users#create'
