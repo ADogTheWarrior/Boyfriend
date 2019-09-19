@@ -36,7 +36,9 @@ gem 'figaro'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
 
 gem 'thin'
 
