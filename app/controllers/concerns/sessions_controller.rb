@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if (auth[:provider] == "google_oauth2")
+    if auth && auth[:provider] == "google_oauth2"
       @user = User.find_or_create_by(email: auth[:info][:email]) do |u|
         u.name = auth[:info][:first_name]
         u.email = auth[:info][:email]
