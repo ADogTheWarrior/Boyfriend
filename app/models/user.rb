@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
 
   #returns the User with the biggest bookshelf
   def self.largest_bookshelf
-    User.left_joins(:books).group('books.id').order('count(books.id) desc').limit(1).first
+    User.left_joins(:books).group(:id).order('count(books.id) desc').limit(1).first
   end
 end
