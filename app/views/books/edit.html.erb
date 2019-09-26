@@ -3,7 +3,7 @@
 <% if @book.errors.any? %>
   <div id="error_explanation">
     <h3>
-      <%= pluralize(@post.errors.count, "error") %>
+      <%= pluralize(@book.errors.count, "error") %>
       prohibited this post from being saved:
     </h3>
 
