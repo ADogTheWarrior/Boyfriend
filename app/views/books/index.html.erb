@@ -1,4 +1,7 @@
 <h3>Book Index View</h3>
+
+<p><%= link_to "New Book", new_book_path%></p>
+
 <tbody>
   <% @books.all.each do |book| %>
     <tr>
