@@ -1,6 +1,3 @@
-Author New View<br>
+<h2>New Author</h2>
 
-<%= form_for @author do |f| %>
-  Name: <%= f.text_field :name %><br>
-  <%= f.submit %>
-<% end %>
+<%= render partial: "authorform", locals: {author: @author} %>
