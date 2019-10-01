@@ -1,4 +1,4 @@
-<h2>User Edit View</h2>
+<h1>Editing "<%= @user.name %>"</h1>
 
 <%= form_for @user do |f| %>
   Name: <%= f.text_field :name %><br>
@@ -15,6 +15,3 @@
 
   <%= f.submit %>
 <% end %>
-
-<!-- need to add a way to add/remove the book to/from current user -->
-<!-- Gives the current user object," User.find(session[:user_id]) " -->

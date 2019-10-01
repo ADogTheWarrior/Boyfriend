@@ -1,4 +1,4 @@
-<h3>Book Index View</h3>
+<h1>Books</h1>
 
 <p><%= link_to "New Book", new_book_path%></p>
 
@@ -11,6 +11,4 @@
       <td>Author: <%= link_to book.author.name, author_path(book.author) if book.author%></td><br><br>
     </tr>
   <% end %>
-
-  books.count=<%= @books.count %>
 </tbody>
