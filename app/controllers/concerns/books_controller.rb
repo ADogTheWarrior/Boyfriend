@@ -21,12 +21,12 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    if @book.valid?
-      @book.save
+    if @book.save
       if !session[:user_id].nil?
         User.find(session[:user_id]).books << @book
       end
       redirect_to book_path(@book)
+      # redirect_to new_book_path()  brand new http request
     else
       render :new
     end

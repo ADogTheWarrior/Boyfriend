@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 4) do
   create_table "user_books", force: :cascade do |t|
     t.integer "user_id"
     t.integer "book_id"
+    t.boolean "favorite", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

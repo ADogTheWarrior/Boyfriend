@@ -5,7 +5,7 @@ Specs:
 - [x] Include at least one has_many relationship (Authors has many Books)
 - [x] Include at least one belongs_to relationship (Books belongs to Authors)
 - [x] Include at least one has_many through relationship (User has many Authors through Books)
-- [x] The "through" part of the has_many through includes at least one user submittable attribute (Author.name)
+- [x] The "through" part of the has_many through includes at least one user submittable attribute (User_book.favorite)
 - [x] Include reasonable validations for simple model objects (Models User/Author/Book)
 - [x] Include a class level ActiveRecord scope method (View User Largest Bookshelf)
 - [x] Include signup (omniauth-google-oauth2)

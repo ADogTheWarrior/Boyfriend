@@ -4,12 +4,21 @@
   <p><%= params[:message] %></p>
 <% end %>
 
-<% @user.books.each do |book| %>
+<table>
   <tr>
-    <td><%= link_to book.title, book_path(book) %></td>
-    <td>, <%= book.genre %></td><br><br>
+    <th>Title</th>
+    <th>Genre</th>
+    <th>Favoite</th>
   </tr>
-<% end %><br>
+<% @user.user_books.each do |userbook| %>
+  <tr>
+    <td><%= link_to userbook.book.title, book_path(userbook.book) %></td>
+    <td><%= userbook.book.genre %></td>
+    <td><%= userbook.favorite %></td><br><br>
+  </tr>
+<% end %>
+</table><br>
+
 
 <%= link_to "Edit User/Add books to shelf", edit_user_path(@user) %><br>
 

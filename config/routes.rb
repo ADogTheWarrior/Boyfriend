@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   resources :sessions
+    # get rid of routes im not using
   resources :users
   resources :books
   resources :authors do

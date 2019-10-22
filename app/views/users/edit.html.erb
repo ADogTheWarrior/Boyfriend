@@ -13,5 +13,9 @@
     <% end %>
   </div>
 
+  <%= @user.user_books.each do |userbook| %>
+    <%= userbook.favorite %>: <%= userbook.book.title %><br>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
