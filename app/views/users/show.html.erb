@@ -14,7 +14,8 @@
   <tr>
     <td><%= link_to userbook.book.title, book_path(userbook.book) %></td>
     <td><%= userbook.book.genre %></td>
-    <td><%= userbook.favorite %></td><br><br>
+    <td><%= userbook.favorite %></td>
+    <td><%= link_to "button for switching favorite", 'favorite' %></td><br><br>
   </tr>
 <% end %>
 </table><br>

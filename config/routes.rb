@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'users/largest_bookshelf' => 'users#largest_bookshelf'
 
+  get 'users/favorite' => 'users#favorite'
+  post 'users/favorite' => 'users#favorite'
+
   root 'sessions#new'
 
   get '/auth/google_oauth2/callback' => 'sessions#create'

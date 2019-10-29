@@ -33,14 +33,19 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    # deletes all books with this user
-    @user.books.clear
+    @user.book_ids = params[:user][:book_ids]
 
-    # adds books from params
-    params[:user][:book_ids].each do |book_id|
-      if (book_id != "")
-        book = Book.find(book_id)
-        @user.books << book
+    @user.user_books.each do |user_book|
+      #sets each book to not favorite
+      user_book.favorite = false
+
+      # update books marked for favorite
+      params[:user][:user_books].each do |user_book_id|
+# binding.pry
+        if user_book.id == user_book_id
+binding.pry
+          user_book.favorite = true
+        end
       end
     end
 
@@ -62,6 +67,11 @@ class UsersController < ApplicationController
     @user.destroy
     flash[:notice] = "User deleted."
     redirect_to users_path
+  end
+
+  def favorite
+binding.pry
+    render :show
   end
 
   private
