@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'users/largest_bookshelf' => 'users#largest_bookshelf'
 
-  get 'users/favorite' => 'users#favorite'
-  post 'users/favorite' => 'users#favorite'
+  get 'favorite' => 'userbooks#favorite'
+  post 'favorite' => 'userbooks#favorite'
 
   root 'sessions#new'
 
@@ -13,12 +13,14 @@ Rails.application.routes.draw do
   delete '/signout' => 'users#destroy', :as => :signout
 
   get '/login' => 'sessions#new'
+  # get '/sessions/new', to: 'sessions#new', as: 'login'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
   resources :sessions
     # get rid of routes im not using
   resources :users
+  resources :userbooks
   resources :books
   resources :authors do
     resources :books, only: [:show, :index, :new, :edit]

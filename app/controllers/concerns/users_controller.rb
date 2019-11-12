@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
+# binding.pry
     if session.include? :user_id
       @user = User.find(params[:id])
     else
@@ -35,20 +36,6 @@ class UsersController < ApplicationController
 
     @user.book_ids = params[:user][:book_ids]
 
-    @user.user_books.each do |user_book|
-      #sets each book to not favorite
-      user_book.favorite = false
-
-      # update books marked for favorite
-      params[:user][:user_books].each do |user_book_id|
-# binding.pry
-        if user_book.id == user_book_id
-binding.pry
-          user_book.favorite = true
-        end
-      end
-    end
-
     @user.update(user_params)
 
     if @user.save
@@ -70,7 +57,15 @@ binding.pry
   end
 
   def favorite
-binding.pry
+# binding.pry
+    # @user_book switch from false to true or true to false
+    # if @user_book.favorite == false
+    #   @user_book.favorite = true
+    # else
+    #   @user_book.favorite = false
+    # end
+    # @user_book.save
+
     render :show
   end
 
