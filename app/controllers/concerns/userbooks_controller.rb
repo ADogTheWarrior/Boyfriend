@@ -1,6 +1,8 @@
 class UserbooksController < ApplicationController
   def favorite
-  binding.pry
+    # current bug, @user_book is undefined
+  # binding.pry
+
       # @user_book switch from false to true or true to false
       if @user_book.favorite == false
         @user_book.favorite = true
@@ -13,6 +15,16 @@ class UserbooksController < ApplicationController
   end
 
   def index
+  end
+
+  def show
+    # needs to be able to find the specific userbook, seems like it would need to know the book and user id
+    # binding.pry
+    if session.include? :id
+      @user_book = UserBook.find(params[:id])
+    else
+      redirect_to '/'
+    end
   end
 
   private
