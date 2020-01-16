@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'users/largest_bookshelf' => 'users#largest_bookshelf'
 
-  get 'favorite' => 'userbooks#favorite'
-  post 'favorite' => 'userbooks#favorite'
+  get 'favorite/:id' => 'userbooks#favorite'
+  post 'favorite/:id' => 'userbooks#favorite'
 
   root 'sessions#new'
 

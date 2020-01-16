@@ -14,15 +14,10 @@
   <tr>
     <td><%= link_to userbook.book.title, book_path(userbook.book) %></td>
     <td><%= userbook.book.genre %></td>
-    <td><%= userbook.favorite %></td>
-    <td><%= link_to "button for switching favorite", favorite_path %></td><br><br>
-    <td><%= link_to userbook, userbook_path(userbook) %></td>
-    <td><%= userbook.class %></td>
-    <td><%= userbook.id %></td>
+    <td><a href="/favorite/<%= userbook.id%>"><%= userbook.favorite %></a></td>
   </tr>
 <% end %>
 </table><br>
-
 
 <%= link_to "Edit User/Add books to shelf", edit_user_path(@user) %><br>
 
