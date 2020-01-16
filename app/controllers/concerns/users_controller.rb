@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-# binding.pry
     if session.include? :user_id
       @user = User.find(params[:id])
     else
@@ -54,19 +53,6 @@ class UsersController < ApplicationController
     @user.destroy
     flash[:notice] = "User deleted."
     redirect_to users_path
-  end
-
-  def favorite
-# binding.pry
-    # @user_book switch from false to true or true to false
-    # if @user_book.favorite == false
-    #   @user_book.favorite = true
-    # else
-    #   @user_book.favorite = false
-    # end
-    # @user_book.save
-
-    render :show
   end
 
   private

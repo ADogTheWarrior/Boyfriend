@@ -20,11 +20,21 @@ class UserbooksController < ApplicationController
   def show
     # needs to be able to find the specific userbook, seems like it would need to know the book and user id
     # binding.pry
-    if session.include? :id
+    # if session.include? :id
       @user_book = UserBook.find(params[:id])
-    else
-      redirect_to '/'
-    end
+
+      if @user_book.favorite == false
+        @user_book.favorite = true
+      else
+        @user_book.favorite = false
+      end
+      @user_book.save
+
+      @user = User.find(@user_book.user_id)
+      redirect_to @user
+    # else
+    #   redirect_to '/'
+    # end
   end
 
   private
